@@ -661,6 +661,10 @@ export default function HomePage() {
               { id: 501, name: 'ساعة كلاسيكية', nameEn: 'Classic Watch', price: '---', image: '/products/watch-2.png' },
               { id: 502, name: 'ساعة أنيقة', nameEn: 'Elegant Watch', price: '---', image: '/products/watch-3.png' },
               { id: 503, name: 'ساعة فاخرة', nameEn: 'Luxury Watch', price: '---', image: '/products/watches-1.png' },
+              { id: 504, name: 'ساعة 10', nameEn: 'Watch 10', price: '---', image: '/products/watch-4.jpg' },
+              { id: 505, name: 'ساعة 11', nameEn: 'Watch 11', price: '---', image: '/products/watch-5.jpg' },
+              { id: 506, name: 'ساعة 12', nameEn: 'Watch 12', price: '---', image: '/products/watch-6.jpg' },
+              { id: 507, name: 'ساعة 15', nameEn: 'Watch 15', price: '---', image: '/products/watch-7.jpg' },
               ...userImages.watches.map((img, i) => ({ id: 7001 + i, name: 'ساعة جديدة', nameEn: 'New Watch', price: '---', image: img }))
             ].map((watch, i) => (
               <div key={watch.id} className="group relative bg-gradient-to-b from-surface-2 to-surface rounded-3xl p-8 border border-gold/10 hover:border-gold/40 transition-all duration-500">
