@@ -8,7 +8,7 @@ const ModelViewer = dynamic(() => import('../components/ModelViewer'), { ssr: fa
 const defaultProducts = [
   { id: 1, name: 'سوار ذهب أبيض', nameEn: 'White Gold Bracelet', price: '---', image: '/products/bracelet.png', section: 'products' },
   { id: 2, name: 'عقد ماسي', nameEn: 'Diamond Necklace', price: '---', image: '/products/necklace.png', section: 'products' },
-  { id: 3, name: 'خاتم زمرد', nameEn: 'Emerald Ring', price: '---', image: '/products/ring.png', section: 'products' },
+
   { id: 4, name: 'أقراط لؤلؤ', nameEn: 'Pearl Earrings', price: '---', image: '/products/earrings.png', section: 'products' },
   { id: 8, name: 'سوار ألماسي', nameEn: 'Diamond Bangle', price: '---', image: '/products/bangle.png', section: 'products' },
   { id: 9, name: 'خاتم ذهب', nameEn: 'Gold Ring', price: '---', image: '/products/ring-1.png', section: 'products' },
@@ -295,7 +295,7 @@ export default function HomePage() {
   const tryOnJewelry = [
     { id: 'n1', name: 'عقد ماسي', cat: 'necklace', image: '/products/necklace.png' },
     { id: 'n2', name: 'عقد فراشات', cat: 'necklace', image: '/products/set-1.png' },
-    { id: 'r1', name: 'خاتم زمرد', cat: 'ring', image: '/products/ring.png' },
+
     { id: 'r2', name: 'خاتم ذهب', cat: 'ring', image: '/products/ring-1.png' },
     { id: 'r3', name: 'خاتم ماسي', cat: 'ring', image: '/products/ring-2.png' },
     { id: 'b1', name: 'سوار ذهب', cat: 'bracelet', image: '/products/bracelet.png' },
@@ -576,7 +576,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
-              { id: 401, name: 'خاتم زمرد', nameEn: 'Emerald Ring', price: '---', image: '/products/ring.png' },
+
               { id: 402, name: 'خاتم ذهب', nameEn: 'Gold Ring', price: '---', image: '/products/ring-1.png' },
               { id: 403, name: 'خاتم ماسي', nameEn: 'Diamond Ring', price: '---', image: '/products/ring-2.png' },
               ...userImages.products.map((img, i) => ({ id: 4100 + i, name: 'خاتم جديد', nameEn: 'New Ring', price: '---', image: img }))
@@ -586,7 +586,7 @@ export default function HomePage() {
                   <img src={item.image} alt={item.name} className={`w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-110 ${i % 2 === 0 ? 'animate-float-slow' : 'animate-float-slow-2'}`} />
                   <div className="absolute top-2 left-2 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                     <button onClick={(e) => { e.stopPropagation(); setEditItem({ section: 'rings', index: i, name: item.name, nameEn: item.nameEn, price: item.price, image: item.image }); }} className="w-7 h-7 bg-blue-500/80 rounded-full flex items-center justify-center text-white text-xs hover:bg-blue-400">✎</button>
-                    <button onClick={(e) => { e.stopPropagation(); if (i >= 3) deleteFromSection('rings', i - 3); }} className="w-7 h-7 bg-red-500/80 rounded-full flex items-center justify-center text-white text-xs hover:bg-red-400">✕</button>
+                    <button onClick={(e) => { e.stopPropagation(); if (i >= 2) deleteFromSection('rings', i - 2); }} className="w-7 h-7 bg-red-500/80 rounded-full flex items-center justify-center text-white text-xs hover:bg-red-400">✕</button>
                   </div>
                 </div>
                 <h4 className="font-display text-lg text-foreground font-bold mb-1">{item.name}</h4>
@@ -616,14 +616,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            {[{ id: 101, name: 'طقم فراشات ذهبي', nameEn: 'Golden Butterfly Set', price: '---', image: '/products/set-1.png' },
-              { id: 102, name: 'طقم ماسي فاخر', nameEn: 'Luxury Diamond Set', price: '---', image: '/products/set-2.png' },
-              { id: 103, name: 'طقم كلاسيكي أنيق', nameEn: 'Elegant Classic Set', price: '---', image: '/products/set-3.png' },
-              { id: 104, name: 'طقم ألماسي نسائي', nameEn: 'Ladies Diamond Set', price: '---', image: '/products/set-1.png' },
-              { id: 105, name: 'طقم كامل', nameEn: 'Full Set', price: '---', image: '/products/set-4.png' },
-              { id: 106, name: 'طقم كامل 1', nameEn: 'Full Set 1', price: '---', image: '/products/set-5.png' },
-              { id: 107, name: 'طقم كامل 2', nameEn: 'Full Set 2', price: '---', image: '/products/set-6.png' },
-              { id: 108, name: 'طقم كامل 3', nameEn: 'Full Set 3', price: '---', image: '/products/set-7.png' },
+            {[{ id: 108, name: 'طقم كامل 3', nameEn: 'Full Set 3', price: '---', image: '/products/set-7.png' },
               { id: 109, name: 'طقم كامل 4', nameEn: 'Full Set 4', price: '---', image: '/products/set-8.png' },
               { id: 110, name: 'طقم كامل 5', nameEn: 'Full Set 5', price: '---', image: '/products/set-9.png' },
               { id: 111, name: 'طقم كامل 6', nameEn: 'Full Set 6', price: '---', image: '/products/set-10.png' },
@@ -633,8 +626,8 @@ export default function HomePage() {
                 <div className="aspect-square overflow-hidden mb-6 flex items-center justify-center bg-background/40 rounded-2xl cursor-pointer relative" onClick={() => setLightbox({ src: item.image, alt: item.name })}>
                   <img src={item.image} alt={item.name} className={`w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-110 ${i % 2 === 0 ? 'animate-float-slow' : 'animate-float-slow-2'}`} />
                   <div className="absolute top-2 left-2 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <button onClick={(e) => { e.stopPropagation(); setEditItem({ section: 'sets', index: i - 7, name: item.name, nameEn: item.nameEn, price: item.price, image: item.image }); }} className="w-7 h-7 bg-blue-500/80 rounded-full flex items-center justify-center text-white text-xs hover:bg-blue-400">✎</button>
-                    <button onClick={(e) => { e.stopPropagation(); if (i >= 7) deleteFromSection('sets', i - 7); }} className="w-7 h-7 bg-red-500/80 rounded-full flex items-center justify-center text-white text-xs hover:bg-red-400">✕</button>
+                    <button onClick={(e) => { e.stopPropagation(); setEditItem({ section: 'sets', index: i, name: item.name, nameEn: item.nameEn, price: item.price, image: item.image }); }} className="w-7 h-7 bg-blue-500/80 rounded-full flex items-center justify-center text-white text-xs hover:bg-blue-400">✎</button>
+                    <button onClick={(e) => { e.stopPropagation(); deleteFromSection('sets', i); }} className="w-7 h-7 bg-red-500/80 rounded-full flex items-center justify-center text-white text-xs hover:bg-red-400">✕</button>
                   </div>
                 </div>
                 <h4 className="font-display text-lg text-foreground font-bold mb-1">{item.name}</h4>
