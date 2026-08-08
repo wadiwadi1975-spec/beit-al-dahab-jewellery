@@ -1897,7 +1897,7 @@ export default function HomePage() {
               <h5 className="text-gold text-sm font-bold mb-4">تواصل معنا</h5>
               <div className="space-y-3 text-foreground/40 text-sm">
                 <p>الكويت - مدينة الفروانية - سوق الذهب</p>
-                <p>خلف الجمعية</p>
+                <p>خلف الجمعية الرئيسية - السرداب</p>
                 <p dir="ltr">+965 9898 0888</p>
                 <p dir="ltr">Bait.aldhab@gmail.com</p>
               </div>
