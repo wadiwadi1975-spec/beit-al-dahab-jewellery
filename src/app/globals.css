@@ -1,0 +1,194 @@
+@import "tailwindcss";
+@import url('https://fonts.cdnfonts.com/css/tw-cen-mt-condensed');
+
+@theme inline {
+  --color-background: #000000;
+  --color-surface: #000000;
+  --color-surface-2: #0a0a0a;
+  --color-foreground: #f4ead9;
+  --color-gold: #cda15a;
+  --color-gold-light: #f4d78b;
+  --color-gold-dark: #8a6323;
+  --color-wine: #5c1e2b;
+  --color-emerald: #1f4d3d;
+  --font-display: "Aref Ruqaa", serif;
+  --font-body: "Tajawal", sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "liga" 1, "calt" 1, "kern" 1;
+}
+
+[lang="ar"] {
+  font-feature-settings: "liga" 1, "calt" 1, "kern" 1, "ccmp" 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-feature-settings: "liga" 1, "calt" 1, "kern" 1, "ccmp" 1;
+}
+
+.brand-logo {
+  font-family: 'Tw Cen MT Condensed Extra Bold', sans-serif;
+  color: #cda15a;
+  text-shadow:
+    0 0 10px rgba(205, 161, 90, 0.4),
+    0 0 30px rgba(205, 161, 90, 0.2);
+}
+
+::selection {
+  background: var(--color-gold);
+  color: #000000;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--color-gold-dark), var(--color-gold));
+  border-radius: 8px;
+}
+
+.text-gradient-gold {
+  color: transparent;
+  background: linear-gradient(120deg, #8a6323, #f4d78b 35%, #cda15a, #f4d78b 75%, #8a6323) 0 0/200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shine 6s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200%;
+  }
+}
+
+.gold-border {
+  border-image: linear-gradient(120deg, #8a6323, #f4d78b, #8a6323) 1;
+}
+
+.card-glow {
+  box-shadow: 0 0 0 1px rgba(205, 161, 90, 0.12), 0 20px 60px -20px rgba(0, 0, 0, 0.75);
+}
+
+.card-glow:hover {
+  box-shadow: 0 0 0 1px rgba(205, 161, 90, 0.4), 0 25px 70px -15px rgba(205, 161, 90, 0.25);
+}
+
+.noise-overlay::before {
+  content: "";
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  position: absolute;
+  inset: 0;
+}
+
+@keyframes marquee {
+  0% { transform: translate(0); }
+  100% { transform: translate(-50%); }
+}
+
+.marquee-track {
+  animation: marquee 28s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-gold {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+.animate-pulse-gold {
+  animation: pulse-gold 3s ease-in-out infinite;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-8px) rotate(1deg); }
+  50% { transform: translateY(-15px) rotate(0deg); }
+  75% { transform: translateY(-8px) rotate(-1deg); }
+}
+
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+@keyframes float-slow-2 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-12px) rotate(-1.5deg); }
+  66% { transform: translateY(-6px) rotate(1.5deg); }
+}
+
+.animate-float-slow-2 {
+  animation: float-slow-2 10s ease-in-out infinite;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 40s linear infinite;
+}
+
+.text-gold-3d {
+  color: #cda15a;
+  text-shadow:
+    0 1px 0 #b8913a,
+    0 2px 0 #a67d2a,
+    0 3px 0 #8a6323,
+    0 4px 8px rgba(0,0,0,0.4),
+    0 0 40px rgba(205,161,90,0.3);
+}
+
+@keyframes logo-glow {
+  0%, 100% { filter: drop-shadow(0 0 20px rgba(205,161,90,0.3)); }
+  50% { filter: drop-shadow(0 0 40px rgba(205,161,90,0.5)); }
+}
+
+.logo-glow {
+  animation: logo-glow 4s ease-in-out infinite;
+}
+
+.hide-ai-text {
+  position: relative;
+  overflow: hidden;
+}
+
+.hide-ai-text::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 35px;
+  background: linear-gradient(135deg, transparent 30%, var(--color-background) 30%);
+  pointer-events: none;
+}
