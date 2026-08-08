@@ -576,9 +576,27 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
-
               { id: 402, name: 'خاتم ذهب', nameEn: 'Gold Ring', price: '---', image: '/products/ring-1.png' },
               { id: 403, name: 'خاتم ماسي', nameEn: 'Diamond Ring', price: '---', image: '/products/ring-2.png' },
+              { id: 410, name: 'خاتم 10', nameEn: 'Ring 10', price: '---', image: '/products/ring-10.jpg' },
+              { id: 411, name: 'خاتم 11', nameEn: 'Ring 11', price: '---', image: '/products/ring-11.jpg' },
+              { id: 412, name: 'خاتم 12', nameEn: 'Ring 12', price: '---', image: '/products/ring-12.jpg' },
+              { id: 413, name: 'خاتم 13', nameEn: 'Ring 13', price: '---', image: '/products/ring-13.jpg' },
+              { id: 414, name: 'خاتم 14', nameEn: 'Ring 14', price: '---', image: '/products/ring-14.jpg' },
+              { id: 415, name: 'خاتم 15', nameEn: 'Ring 15', price: '---', image: '/products/ring-15.jpg' },
+              { id: 416, name: 'خاتم 16', nameEn: 'Ring 16', price: '---', image: '/products/ring-16.jpg' },
+              { id: 417, name: 'خاتم 17', nameEn: 'Ring 17', price: '---', image: '/products/ring-17.jpg' },
+              { id: 418, name: 'خاتم 18', nameEn: 'Ring 18', price: '---', image: '/products/ring-18.jpg' },
+              { id: 419, name: 'خاتم 19', nameEn: 'Ring 19', price: '---', image: '/products/ring-19.jpg' },
+              { id: 420, name: 'خاتم 20', nameEn: 'Ring 20', price: '---', image: '/products/ring-20.jpg' },
+              { id: 421, name: 'خاتم 21', nameEn: 'Ring 21', price: '---', image: '/products/ring-21.jpg' },
+              { id: 422, name: 'خاتم 22', nameEn: 'Ring 22', price: '---', image: '/products/ring-22.jpg' },
+              { id: 423, name: 'خاتم 23', nameEn: 'Ring 23', price: '---', image: '/products/ring-23.jpg' },
+              { id: 424, name: 'خاتم 24', nameEn: 'Ring 24', price: '---', image: '/products/ring-24.jpg' },
+              { id: 425, name: 'خاتم 25', nameEn: 'Ring 25', price: '---', image: '/products/ring-25.jpg' },
+              { id: 426, name: 'خاتم 26', nameEn: 'Ring 26', price: '---', image: '/products/ring-26.jpg' },
+              { id: 427, name: 'خاتم 27', nameEn: 'Ring 27', price: '---', image: '/products/ring-27.jpg' },
+              { id: 428, name: 'خاتم 28', nameEn: 'Ring 28', price: '---', image: '/products/ring-28.jpg' },
               ...userImages.products.map((img, i) => ({ id: 4100 + i, name: 'خاتم جديد', nameEn: 'New Ring', price: '---', image: img }))
             ].map((item, i) => (
               <div key={item.id} className="group relative bg-gradient-to-b from-surface-2 to-surface rounded-3xl p-8 border border-gold/10 hover:border-gold/40 transition-all duration-500">
@@ -586,7 +604,7 @@ export default function HomePage() {
                   <img src={item.image} alt={item.name} className={`w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-110 ${i % 2 === 0 ? 'animate-float-slow' : 'animate-float-slow-2'}`} />
                   <div className="absolute top-2 left-2 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                     <button onClick={(e) => { e.stopPropagation(); setEditItem({ section: 'rings', index: i, name: item.name, nameEn: item.nameEn, price: item.price, image: item.image }); }} className="w-7 h-7 bg-blue-500/80 rounded-full flex items-center justify-center text-white text-xs hover:bg-blue-400">✎</button>
-                    <button onClick={(e) => { e.stopPropagation(); if (i >= 2) deleteFromSection('rings', i - 2); }} className="w-7 h-7 bg-red-500/80 rounded-full flex items-center justify-center text-white text-xs hover:bg-red-400">✕</button>
+                    <button onClick={(e) => { e.stopPropagation(); if (i >= 21) deleteFromSection('rings', i - 21); }} className="w-7 h-7 bg-red-500/80 rounded-full flex items-center justify-center text-white text-xs hover:bg-red-400">✕</button>
                   </div>
                 </div>
                 <h4 className="font-display text-lg text-foreground font-bold mb-1">{item.name}</h4>
