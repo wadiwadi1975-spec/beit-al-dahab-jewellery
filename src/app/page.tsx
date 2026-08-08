@@ -426,7 +426,6 @@ export default function HomePage() {
               <a href="#bracelets" className="flex flex-col items-center text-foreground/70 hover:text-gold transition-colors"><span className="text-base">أساور</span><span className="text-base text-gold/70 font-serif">Bracelets</span></a>
               <a href="#earrings2" className="flex flex-col items-center text-foreground/70 hover:text-gold transition-colors"><span className="text-base">أقراط</span><span className="text-base text-gold/70 font-serif">Earrings</span></a>
               <a href="#watches" className="flex flex-col items-center text-foreground/70 hover:text-gold transition-colors"><span className="text-base">ساعات</span><span className="text-base text-gold/70 font-serif">Watches</span></a>
-              <a href="#chairs" className="flex flex-col items-center text-foreground/70 hover:text-gold transition-colors"><span className="text-base">كراسي</span><span className="text-base text-gold/70 font-serif">Chairs</span></a>
               <a href="#handchain" className="flex flex-col items-center text-foreground/70 hover:text-gold transition-colors"><span className="text-base">سلسال يد</span><span className="text-base text-gold/70 font-serif">Hand Chain</span></a>
               <a href="#gift-wrapping" className="flex flex-col items-center text-foreground/70 hover:text-gold transition-colors"><span className="text-base">تغليف</span><span className="text-base text-gold/70 font-serif">Gift</span></a>
               <a href="#try-on" className="flex flex-col items-center text-gold hover:text-gold-light transition-colors font-bold"><span className="text-base">تجربة</span><span className="text-base text-gold/70 font-serif">Try On</span></a>
@@ -467,7 +466,6 @@ export default function HomePage() {
               <span className="text-gold/40 text-[10px] tracking-[0.3em] uppercase">التصنيفات</span>
             </div>
             <a href="#watches" onClick={() => setMobileMenuOpen(false)} className="block text-foreground/80 hover:text-gold text-sm transition-colors">ساعات <span className="text-gold/40 text-[10px] font-serif">Watches</span></a>
-            <a href="#chairs" onClick={() => setMobileMenuOpen(false)} className="block text-foreground/80 hover:text-gold text-sm transition-colors">كراسي <span className="text-gold/40 text-[10px] font-serif">Chairs</span></a>
             <a href="#handchain" onClick={() => setMobileMenuOpen(false)} className="block text-foreground/80 hover:text-gold text-sm transition-colors">سلسال يد <span className="text-gold/40 text-[10px] font-serif">Hand Chain</span></a>
             <a href="#gift-wrapping" onClick={() => setMobileMenuOpen(false)} className="block text-foreground/80 hover:text-gold text-sm transition-colors">تغليف فاخر <span className="text-gold/40 text-[10px] font-serif">Gift Wrapping</span></a>
             <a href="#rings" onClick={() => setMobileMenuOpen(false)} className="block text-foreground/80 hover:text-gold text-sm transition-colors">خواتم <span className="text-gold/40 text-[10px] font-serif">Rings</span></a>
@@ -1347,34 +1345,6 @@ export default function HomePage() {
               </svg>
               إضافة أقراط جديدة
             </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Gold Chairs */}
-      <section id="chairs" className="py-12 sm:py-20 px-4 sm:px-6 md:px-10">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-10 sm:mb-16">
-            <span className="text-gold/60 text-xs tracking-[0.3em] uppercase block mb-3">Gold Chairs / كراسي ذهب</span>
-            <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gradient-gold font-bold">كراسي ذهب</h3>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            {[
-              { id: 601, name: 'كرسي ذهبي فاخر', nameEn: 'Luxury Gold Chair', price: '---', image: '/products/chair-1.png' },
-              { id: 602, name: 'كرسي ذهبي كلاسيكي', nameEn: 'Classic Gold Chair', price: '---', image: '/products/chair-2.png' },
-              { id: 603, name: 'كرسي ذهبي أنيق', nameEn: 'Elegant Gold Chair', price: '---', image: '/products/chair-3.png' },
-              { id: 604, name: 'كرسي ذهبي مزخرف', nameEn: 'Ornate Gold Chair', price: '---', image: '/products/chair-4.png' },
-            ].map((item, i) => (
-              <div key={item.id} className="group relative bg-gradient-to-b from-surface-2 to-surface rounded-3xl p-8 border border-gold/10 hover:border-gold/40 transition-all duration-500">
-                <div className="aspect-square overflow-hidden mb-6 flex items-center justify-center bg-background/40 rounded-2xl cursor-pointer relative" onClick={() => setLightbox({ src: item.image, alt: item.name })}>
-                  <img src={item.image} alt={item.name} className={`w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-110 ${i % 2 === 0 ? 'animate-float-slow' : 'animate-float-slow-2'}`} />
-                </div>
-                <h4 className="font-display text-lg text-foreground font-bold mb-1">{item.name}</h4>
-                <p className="text-foreground/40 text-xs mb-3">{item.nameEn}</p>
-                <p className="text-gold font-bold">اتصل بالسعر</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
