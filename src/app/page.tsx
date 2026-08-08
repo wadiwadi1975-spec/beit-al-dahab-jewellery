@@ -5,15 +5,7 @@ import dynamic from 'next/dynamic';
 
 const ModelViewer = dynamic(() => import('../components/ModelViewer'), { ssr: false });
 
-const defaultProducts = [
-  { id: 1, name: 'سوار ذهب أبيض', nameEn: 'White Gold Bracelet', price: '---', image: '/products/bracelet.png', section: 'products' },
-  { id: 2, name: 'عقد ماسي', nameEn: 'Diamond Necklace', price: '---', image: '/products/necklace.png', section: 'products' },
-
-  { id: 4, name: 'أقراط لؤلؤ', nameEn: 'Pearl Earrings', price: '---', image: '/products/earrings.png', section: 'products' },
-  { id: 8, name: 'سوار ألماسي', nameEn: 'Diamond Bangle', price: '---', image: '/products/bangle.png', section: 'products' },
-  { id: 9, name: 'خاتم ذهب', nameEn: 'Gold Ring', price: '---', image: '/products/ring-1.png', section: 'products' },
-  { id: 10, name: 'خاتم ماسي', nameEn: 'Diamond Ring', price: '---', image: '/products/ring-2.png', section: 'products' },
-];
+const defaultProducts = [];
 
 const marqueeItems = [
   'مجوهرات فاخرة', 'تصاميم حصرية', 'ذهب عالي الجودة',
