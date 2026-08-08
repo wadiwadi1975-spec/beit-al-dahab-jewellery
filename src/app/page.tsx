@@ -621,6 +621,13 @@ export default function HomePage() {
               { id: 110, name: 'طقم كامل 5', nameEn: 'Full Set 5', price: '---', image: '/products/set-9.png' },
               { id: 111, name: 'طقم كامل 6', nameEn: 'Full Set 6', price: '---', image: '/products/set-10.png' },
               { id: 112, name: 'طقم كامل 7', nameEn: 'Full Set 7', price: '---', image: '/products/set-11.png' },
+              { id: 113, name: 'طقم 10', nameEn: 'Set 10', price: '---', image: '/products/set-12.jpg' },
+              { id: 114, name: 'طقم 11', nameEn: 'Set 11', price: '---', image: '/products/set-13.jpg' },
+              { id: 115, name: 'طقم 12', nameEn: 'Set 12', price: '---', image: '/products/set-14.jpg' },
+              { id: 116, name: 'طقم 13', nameEn: 'Set 13', price: '---', image: '/products/set-15.jpg' },
+              { id: 117, name: 'طقم 14', nameEn: 'Set 14', price: '---', image: '/products/set-16.jpg' },
+              { id: 118, name: 'طقم 15', nameEn: 'Set 15', price: '---', image: '/products/set-17.jpg' },
+              { id: 119, name: 'طقم 16', nameEn: 'Set 16', price: '---', image: '/products/set-18.jpg' },
             ...userImages.sets.map((img, i) => ({ id: 6001 + i, name: 'طقم جديد', nameEn: 'New Set', price: '---', image: img }))].map((item, i) => (
               <div key={item.id} className="group relative bg-gradient-to-b from-surface-2 to-surface rounded-3xl p-8 border border-gold/10 hover:border-gold/40 transition-all duration-500">
                 <div className="aspect-square overflow-hidden mb-6 flex items-center justify-center bg-background/40 rounded-2xl cursor-pointer relative" onClick={() => setLightbox({ src: item.image, alt: item.name })}>
