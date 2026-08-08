@@ -1699,6 +1699,20 @@ export default function HomePage() {
             <p className="text-foreground/50 text-xs sm:text-sm max-w-2xl mx-auto">نقدم لك خدمة تغليف فاخرة تحول هديتك إلى تجربة لا تُنسى مع لمسة شخصية تعكس ذوقك الرفيع</p>
           </div>
 
+          {/* Gift Wrapping Images */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+            {[
+              { id: 'gw1', image: '/products/gift-wrap-1.jpg', name: 'تغليف فاخر 1' },
+              { id: 'gw2', image: '/products/gift-wrap-2.jpg', name: 'تغليف فاخر 2' },
+              { id: 'gw3', image: '/products/gift-wrap-3.jpg', name: 'تغليف فاخر 3' },
+              { id: 'gw4', image: '/products/gift-wrap-4.jpg', name: 'تغليف فاخر 4' },
+            ].map((item) => (
+              <div key={item.id} className="aspect-square rounded-2xl overflow-hidden border border-gold/10 hover:border-gold/30 transition-all cursor-pointer group" onClick={() => setLightbox({ src: item.image, alt: item.name })}>
+                <img src={item.image} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              </div>
+            ))}
+          </div>
+
           {/* Gift Wrapping Options */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-12">
             {/* Basic Package */}
