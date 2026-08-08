@@ -1274,13 +1274,21 @@ export default function HomePage() {
               { id: 302, name: 'سوار ذهب أنيق', nameEn: 'Elegant Gold Bracelet', price: '---', image: '/products/bracelet-2.jpg' },
               { id: 303, name: 'سوار ألماسي', nameEn: 'Diamond Bracelet', price: '---', image: '/products/bracelet-3.jpg' },
               { id: 304, name: 'سوار كارتير', nameEn: 'Cartier Bracelet', price: '---', image: '/products/bracelet-4.jpg' },
+              { id: 310, name: 'سوار 10', nameEn: 'Bracelet 10', price: '---', image: '/products/bracelet-10.jpg' },
+              { id: 311, name: 'سوار 11', nameEn: 'Bracelet 11', price: '---', image: '/products/bracelet-11.jpg' },
+              { id: 312, name: 'سوار 12', nameEn: 'Bracelet 12', price: '---', image: '/products/bracelet-12.jpg' },
+              { id: 313, name: 'سوار 13', nameEn: 'Bracelet 13', price: '---', image: '/products/bracelet-13.jpg' },
+              { id: 314, name: 'سوار 14', nameEn: 'Bracelet 14', price: '---', image: '/products/bracelet-14.jpg' },
+              { id: 315, name: 'سوار 15', nameEn: 'Bracelet 15', price: '---', image: '/products/bracelet-15.jpg' },
+              { id: 316, name: 'سوار 16', nameEn: 'Bracelet 16', price: '---', image: '/products/bracelet-16.jpg' },
+              { id: 317, name: 'سوار 17', nameEn: 'Bracelet 17', price: '---', image: '/products/bracelet-17.jpg' },
             ...userImages.bracelets.map((img, i) => ({ id: 8001 + i, name: 'سوار جديد', nameEn: 'New Bracelet', price: '---', image: img }))].map((item, i) => (
               <div key={item.id} className="group relative bg-gradient-to-b from-surface-2 to-surface rounded-3xl p-8 border border-gold/10 hover:border-gold/40 transition-all duration-500">
                 <div className="aspect-square overflow-hidden mb-6 flex items-center justify-center bg-background/40 rounded-2xl cursor-pointer relative" onClick={() => setLightbox({ src: item.image, alt: item.name })}>
                   <img src={item.image} alt={item.name} className={`w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-110 ${i % 2 === 0 ? 'animate-float-slow' : 'animate-float-slow-2'}`} />
                   <div className="absolute top-2 left-2 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                     <button onClick={(e) => { e.stopPropagation(); setEditItem({ section: 'bracelets', index: i - 4, name: item.name, nameEn: item.nameEn, price: item.price, image: item.image }); }} className="w-7 h-7 bg-blue-500/80 rounded-full flex items-center justify-center text-white text-xs hover:bg-blue-400">✎</button>
-                    <button onClick={(e) => { e.stopPropagation(); if (i >= 4) deleteFromSection('bracelets', i - 4); }} className="w-7 h-7 bg-red-500/80 rounded-full flex items-center justify-center text-white text-xs hover:bg-red-400">✕</button>
+                    <button onClick={(e) => { e.stopPropagation(); if (i >= 12) deleteFromSection('bracelets', i - 12); }} className="w-7 h-7 bg-red-500/80 rounded-full flex items-center justify-center text-white text-xs hover:bg-red-400">✕</button>
                   </div>
                 </div>
                 <h4 className="font-display text-lg text-foreground font-bold mb-1">{item.name}</h4>
