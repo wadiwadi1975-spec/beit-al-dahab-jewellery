@@ -311,6 +311,9 @@ export default function HomePage() {
     { id: 'h4', name: 'سلسال يد 4', cat: 'handchain', image: '/products/hand-chain-4.png' },
     { id: 'h5', name: 'سلسال يد 5', cat: 'handchain', image: '/products/hand-chain-5.png' },
     { id: 'h6', name: 'سلسال يد 6', cat: 'handchain', image: '/products/hand-chain-6.png' },
+    { id: 'h7', name: 'سلسال يد 7', cat: 'handchain', image: '/products/hand-chain-7.jpg' },
+    { id: 'h8', name: 'سلسال يد 8', cat: 'handchain', image: '/products/hand-chain-8.jpg' },
+    { id: 'h9', name: 'سلسال يد 9', cat: 'handchain', image: '/products/hand-chain-9.jpg' },
   ];
 
   const tryOnZones: Record<string, { top: string; left: string; width: string; label: string }> = {
@@ -1384,6 +1387,9 @@ export default function HomePage() {
               { id: 704, name: 'سلسال يد 4', nameEn: 'Hand Chain 4', price: '---', image: '/products/hand-chain-4.png' },
               { id: 705, name: 'سلسال يد 5', nameEn: 'Hand Chain 5', price: '---', image: '/products/hand-chain-5.png' },
               { id: 706, name: 'سلسال يد 6', nameEn: 'Hand Chain 6', price: '---', image: '/products/hand-chain-6.png' },
+              { id: 707, name: 'سلسال يد 7', nameEn: 'Hand Chain 7', price: '---', image: '/products/hand-chain-7.jpg' },
+              { id: 708, name: 'سلسال يد 8', nameEn: 'Hand Chain 8', price: '---', image: '/products/hand-chain-8.jpg' },
+              { id: 709, name: 'سلسال يد 9', nameEn: 'Hand Chain 9', price: '---', image: '/products/hand-chain-9.jpg' },
             ].map((item, i) => (
               <div key={item.id} className="group relative bg-gradient-to-b from-surface-2 to-surface rounded-3xl p-8 border border-gold/10 hover:border-gold/40 transition-all duration-500">
                 <div className="aspect-square overflow-hidden mb-6 flex items-center justify-center bg-background/40 rounded-2xl cursor-pointer relative" onClick={() => setLightbox({ src: item.image, alt: item.name })}>
