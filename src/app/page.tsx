@@ -690,6 +690,13 @@ export default function HomePage() {
               { id: 505, name: 'ساعة 11', nameEn: 'Watch 11', price: '---', image: '/products/watch-5.jpg' },
               { id: 506, name: 'ساعة 12', nameEn: 'Watch 12', price: '---', image: '/products/watch-6.jpg' },
               { id: 507, name: 'ساعة 15', nameEn: 'Watch 15', price: '---', image: '/products/watch-7.jpg' },
+              { id: 508, name: 'ساعة 20', nameEn: 'Watch 20', price: '---', image: '/products/watch-8.jpg' },
+              { id: 509, name: 'ساعة 21', nameEn: 'Watch 21', price: '---', image: '/products/watch-9.jpg' },
+              { id: 510, name: 'ساعة 22', nameEn: 'Watch 22', price: '---', image: '/products/watch-10.jpg' },
+              { id: 511, name: 'ساعة 23', nameEn: 'Watch 23', price: '---', image: '/products/watch-11.jpg' },
+              { id: 512, name: 'ساعة 24', nameEn: 'Watch 24', price: '---', image: '/products/watch-12.jpg' },
+              { id: 513, name: 'ساعة 25', nameEn: 'Watch 25', price: '---', image: '/products/watch-13.jpg' },
+              { id: 514, name: 'ساعة 26', nameEn: 'Watch 26', price: '---', image: '/products/watch-14.jpg' },
               ...userImages.watches.map((img, i) => ({ id: 7001 + i, name: 'ساعة جديدة', nameEn: 'New Watch', price: '---', image: img }))
             ].map((watch, i) => (
               <div key={watch.id} className="group relative bg-gradient-to-b from-surface-2 to-surface rounded-3xl p-8 border border-gold/10 hover:border-gold/40 transition-all duration-500">
@@ -697,7 +704,7 @@ export default function HomePage() {
                   <img src={watch.image} alt={watch.name} className={`w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-110 ${i % 2 === 0 ? 'animate-float-slow' : 'animate-float-slow-2'}`} />
                   <div className="absolute top-2 left-2 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                     <button onClick={(e) => { e.stopPropagation(); setEditItem({ section: 'watches', index: i - 6, name: watch.name, nameEn: watch.nameEn, price: watch.price, image: watch.image }); }} className="w-7 h-7 bg-blue-500/80 rounded-full flex items-center justify-center text-white text-xs hover:bg-blue-400">✎</button>
-                    <button onClick={(e) => { e.stopPropagation(); if (i >= 6) deleteFromSection('watches', i - 6); }} className="w-7 h-7 bg-red-500/80 rounded-full flex items-center justify-center text-white text-xs hover:bg-red-400">✕</button>
+                    <button onClick={(e) => { e.stopPropagation(); if (i >= 14) deleteFromSection('watches', i - 14); }} className="w-7 h-7 bg-red-500/80 rounded-full flex items-center justify-center text-white text-xs hover:bg-red-400">✕</button>
                   </div>
                 </div>
                 <h4 className="font-display text-lg text-foreground font-bold mb-1">{watch.name}</h4>
