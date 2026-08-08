@@ -1212,7 +1212,7 @@ export default function HomePage() {
                       `📱 الوتساب: ${order.whatsapp}\n` +
                       `📅 التاريخ: ${order.date}`
                     );
-                    window.open(`https://wa.me/96550687763?text=${msg}`, '_blank');
+                    window.open(`https://wa.me/96598980888?text=${msg}`, '_blank');
                     setDesignSaved(true);
                     setTimeout(() => setDesignSaved(false), 3000);
                   }}
@@ -1663,7 +1663,7 @@ export default function HomePage() {
             دع فريقنا المتخصص يساعدك في اختيار القطعة المثالية
           </p>
           <a
-            href="https://wa.me/96550687763?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%85%D8%AC%D8%A7%D9%86%D9%8A%D8%A9"
+            href="https://wa.me/96598980888?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D9%85%D8%AC%D8%A7%D9%86%D9%8A%D8%A9"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-[#25D366] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#20BD5A] transition-all shadow-lg shadow-[#25D366]/20 hover:scale-105"
@@ -1813,7 +1813,7 @@ export default function HomePage() {
           {/* CTA */}
           <div className="text-center mt-10">
             <a
-              href="https://wa.me/96550687763?text=%23خدمة_التغليف_الفاخر"
+              href="https://wa.me/96598980888?text=%23خدمة_التغليف_الفاخر"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-gold text-background px-8 py-4 rounded-full font-bold text-lg hover:bg-gold-light transition-all shadow-lg shadow-gold/20 hover:scale-105"
@@ -1900,7 +1900,7 @@ export default function HomePage() {
               <div className="space-y-3 text-foreground/40 text-sm">
                 <p>الكويت - مدينة الفروانية - سوق الذهب</p>
                 <p>خلف الجمعية</p>
-                <p dir="ltr">+965 50687763</p>
+                <p dir="ltr">+965 9898 0888</p>
               </div>
               <div className="flex gap-4 mt-4">
                 <a href="https://www.facebook.com/people/%D9%85%D8%AC%D9%88%D9%87%D8%B1%D8%A7%D8%AA-%D8%A8%D9%8A%D8%AA-%D8%A7%D9%84%D8%B0%D9%87%D8%A8/61576973302802/#" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-surface border border-gold/20 rounded-full flex items-center justify-center text-gold/60 hover:text-gold hover:border-gold/40 transition-all">
