@@ -1929,6 +1929,7 @@ export default function HomePage() {
                 <p>الكويت - مدينة الفروانية - سوق الذهب</p>
                 <p>خلف الجمعية</p>
                 <p dir="ltr">+965 9898 0888</p>
+                <p dir="ltr">Bait.aldhab@gmail.com</p>
               </div>
               <div className="flex gap-4 mt-4">
                 <a href="https://www.facebook.com/people/%D9%85%D8%AC%D9%88%D9%87%D8%B1%D8%A7%D8%AA-%D8%A8%D9%8A%D8%AA-%D8%A7%D9%84%D8%B0%D9%87%D8%A8/61576973302802/#" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-surface border border-gold/20 rounded-full flex items-center justify-center text-gold/60 hover:text-gold hover:border-gold/40 transition-all">
