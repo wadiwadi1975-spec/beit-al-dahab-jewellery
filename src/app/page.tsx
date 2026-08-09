@@ -5,7 +5,6 @@ import dynamic from 'next/dynamic';
 
 const ModelViewer = dynamic(() => import('../components/ModelViewer'), { ssr: false });
 
-const defaultProducts = [];
 
 const marqueeItems = [
   'مجوهرات فاخرة', 'تصاميم حصرية', 'ذهب عالي الجودة',
@@ -55,7 +54,6 @@ export default function HomePage() {
   const [toast, setToast] = useState<string | null>(null);
   const [mounted, setMounted] = useState(false);
 
-  const [products, setProducts] = useState(defaultProducts);
   const [userImages, setUserImages] = useState<Record<string, string[]>>({
     products: [], sets: [], watches: [], bracelets: [], anklets: [],
   });
@@ -66,15 +64,9 @@ export default function HomePage() {
 
   useEffect(() => {
     setMounted(true);
-    const savedProducts = localStorage.getItem('kayan-products');
     const savedImages = localStorage.getItem('kayan-userImages');
-    if (savedProducts) setProducts(JSON.parse(savedProducts));
     if (savedImages) setUserImages(JSON.parse(savedImages));
   }, []);
-
-  useEffect(() => {
-    if (mounted) localStorage.setItem('kayan-products', JSON.stringify(products));
-  }, [products, mounted]);
 
   useEffect(() => {
     if (mounted) localStorage.setItem('kayan-userImages', JSON.stringify(userImages));
@@ -323,11 +315,6 @@ export default function HomePage() {
     setTimeout(() => setToast(null), 2000);
   };
 
-  const deleteProduct = (id: number) => {
-    setProducts(prev => prev.filter(p => p.id !== id));
-    showToast('تم الحذف');
-  };
-
   const deleteFromSection = (section: string, index: number) => {
     setUserImages(prev => ({
       ...prev,
@@ -340,12 +327,7 @@ export default function HomePage() {
 
   const saveEdit = () => {
     if (!editItem) return;
-    if (editItem.section === 'products') {
-      setProducts(prev => prev.map(p => {
-        const idx = prev.indexOf(p);
-        return idx === editItem.index ? { ...p, name: editItem.name, nameEn: editItem.nameEn, price: editItem.price } : p;
-      }));
-    } else {
+    if (editItem.section !== 'products') {
       setUserImages(prev => ({
         ...prev,
         [editItem.section]: prev[editItem.section].map((img: string, i: number) => i === editItem.index ? editItem.image : img),
@@ -372,14 +354,10 @@ export default function HomePage() {
       return;
     }
     const newId = Date.now();
-    if (addTarget.section === 'products') {
-      setProducts([...products, { id: newId, name: newItem.name, nameEn: newItem.nameEn, price: newItem.price, image: newItem.image, section: 'products' }]);
-    } else {
-      setUserImages(prev => ({
-        ...prev,
-        [addTarget.section]: [...prev[addTarget.section], newItem.image],
-      }));
-    }
+    setUserImages(prev => ({
+      ...prev,
+      [addTarget.section]: [...prev[addTarget.section], newItem.image],
+    }));
     setNewItem({ name: '', nameEn: '', price: '', image: '' });
     setShowAddModal(false);
     showToast(`تمت إضافة "${newItem.name}" إلى ${addTarget.sectionAr}`);
@@ -522,42 +500,6 @@ export default function HomePage() {
           ))}
         </div>
       </div>
-
-      {/* Products */}
-      <section id="products" className="py-12 sm:py-20 px-4 sm:px-6 md:px-10">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-10 sm:mb-16">
-            <span className="text-gold/60 text-xs tracking-[0.3em] uppercase block mb-3">المنتجات</span>
-            <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gradient-gold font-bold">تشكيلتنا الفاخرة</h3>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            {[...products, ...userImages.products.map((img, i) => ({ id: 5001 + i, name: 'منتج جديد', nameEn: 'New Product', price: '---', image: img }))].map((product, i) => (
-              <div key={product.id} className="group relative bg-gradient-to-b from-surface-2 to-surface rounded-3xl p-8 border border-gold/10 hover:border-gold/40 transition-all duration-500">
-                <div className={`aspect-square overflow-hidden mb-6 flex items-center justify-center bg-background/40 rounded-2xl cursor-pointer relative ${product.id === 2 ? 'hide-ai-text' : ''}`} onClick={() => setLightbox({ src: product.image, alt: product.name })}>
-                  <img src={product.image} alt={product.name} className={`w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-110 ${i % 2 === 0 ? 'animate-float-slow' : 'animate-float-slow-2'}`} />
-                  <div className="absolute top-2 left-2 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <button onClick={(e) => { e.stopPropagation(); setEditItem({ section: 'products', index: i, name: product.name, nameEn: product.nameEn, price: product.price, image: product.image }); }} className="w-7 h-7 bg-blue-500/80 rounded-full flex items-center justify-center text-white text-xs hover:bg-blue-400">✎</button>
-                    <button onClick={(e) => { e.stopPropagation(); deleteProduct(product.id); }} className="w-7 h-7 bg-red-500/80 rounded-full flex items-center justify-center text-white text-xs hover:bg-red-400">✕</button>
-                  </div>
-                </div>
-                <h4 className="font-display text-lg text-foreground font-bold mb-1">{product.name}</h4>
-                <p className="text-foreground/40 text-xs mb-3">{product.nameEn}</p>
-                <p className="text-gold font-bold">اتصل بالسعر</p>
-                <button onClick={(e) => { e.stopPropagation(); const cat = product.nameEn.toLowerCase().includes('watch') ? 'watch' : product.nameEn.toLowerCase().includes('ring') ? 'ring' : product.nameEn.toLowerCase().includes('earring') ? 'earring' : product.nameEn.toLowerCase().includes('bracelet') || product.nameEn.toLowerCase().includes('bangle') ? 'bracelet' : product.nameEn.toLowerCase().includes('anklet') ? 'anklet' : 'necklace'; setTryOnCategory(cat); setTryOnItems(prev => ({ ...prev, [cat]: product.image })); resetTryOn(); setTimeout(() => document.getElementById('try-on')?.scrollIntoView({ behavior: 'smooth' }), 100); }} className="mt-3 w-full py-2 rounded-full border border-gold/30 text-gold text-xs hover:bg-gold hover:text-background transition-all font-bold">جربي افتراضياً</button>
-              </div>
-            ))}
-          </div>
-          <div className="flex justify-center mt-8">
-            <button onClick={() => openAddModal('products', 'المنتجات')} className="flex items-center gap-2 px-6 py-3 rounded-full border border-dashed border-gold/30 text-gold/60 hover:border-gold hover:text-gold transition-all text-sm">
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
-              </svg>
-              إضافة منتج جديد
-            </button>
-          </div>
-        </div>
-      </section>
 
       {/* Rings */}
       <section id="rings" className="py-12 sm:py-20 px-4 sm:px-6 md:px-10 bg-surface/30">
@@ -1859,7 +1801,7 @@ export default function HomePage() {
               <h5 className="text-gold text-sm font-bold mb-4">روابط سريعة</h5>
               <div className="space-y-3">
                 <a href="#collections" className="block text-foreground/40 hover:text-gold text-sm transition-colors">المجموعات</a>
-                <a href="#products" className="block text-foreground/40 hover:text-gold text-sm transition-colors">المنتجات</a>
+
                 <a href="#about" className="block text-foreground/40 hover:text-gold text-sm transition-colors">عن بيت الذهب</a>
               </div>
             </div>
